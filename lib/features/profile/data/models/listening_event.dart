@@ -10,5 +10,12 @@ class ListeningEvent extends HiveObject {
   @HiveField(1)
   final DateTime timestamp;
 
-  ListeningEvent({required this.songTitle, required this.timestamp});
+  @HiveField(2)
+  final double durationMinutes; // How many minutes the song was played
+
+  ListeningEvent({
+    required this.songTitle,
+    required this.timestamp,
+    this.durationMinutes = 3.0, // Default ~3 minutes per song
+  });
 }

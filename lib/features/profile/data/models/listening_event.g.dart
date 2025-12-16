@@ -19,17 +19,20 @@ class ListeningEventAdapter extends TypeAdapter<ListeningEvent> {
     return ListeningEvent(
       songTitle: fields[0] as String,
       timestamp: fields[1] as DateTime,
+      durationMinutes: fields[2] as double,
     );
   }
 
   @override
   void write(BinaryWriter writer, ListeningEvent obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.songTitle)
       ..writeByte(1)
-      ..write(obj.timestamp);
+      ..write(obj.timestamp)
+      ..writeByte(2)
+      ..write(obj.durationMinutes);
   }
 
   @override

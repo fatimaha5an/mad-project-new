@@ -25,9 +25,9 @@ class FavBtn extends StatelessWidget {
               icon: Icon(
                 songEntity.isFavourite
                     ? Icons.favorite
-                    : Icons.favorite_outline_outlined,
+                    : Icons.favorite_border,
                 size: 35,
-                color: Colors.red[400],
+                color: songEntity.isFavourite ? const Color(0xFFEE9B00) : Colors.grey,
               ),
             );
           }
@@ -38,9 +38,9 @@ class FavBtn extends StatelessWidget {
                 context.read<FavBtnCubit>().favBtnUpdated(songEntity.songId);
               },
               icon: Icon(
-                state.isFav ? Icons.favorite : Icons.favorite_outline_outlined,
+                state.isFav ? Icons.favorite : Icons.favorite_border,
                 size: 35,
-                color: Colors.red[400],
+                color: state.isFav ? const Color(0xFFEE9B00) : Colors.grey,
               ),
             );
           }

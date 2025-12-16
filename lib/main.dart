@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:spotify/auth/auth_gate.dart';
+import 'package:spotify/presentation/auth/pages/splash_page.dart';
 import 'package:spotify/core/configs/theme/app_theme.dart';
 import 'package:spotify/firebase_options.dart';
 import 'package:spotify/presentation/choose_mode/bloc/theme_cubit.dart';
 import 'package:spotify/service_locater.dart';
 import 'package:spotify/core/services/hive_service.dart';
+import 'package:spotify/core/theme/color_scheme_cubit.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,6 +41,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) => ThemeCubit(),
         ),
+        BlocProvider(
+          create: (_) => ColorSchemeCubit(),
+        ),
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, mode) => MaterialApp(
@@ -47,7 +51,7 @@ class MyApp extends StatelessWidget {
           themeMode: mode,
           darkTheme: AppTheme.darkTheme,
           theme: AppTheme.lightTheme,
-          home: const AuthGate(),
+          home: const SplashPage(),
         ),
       ),
     );

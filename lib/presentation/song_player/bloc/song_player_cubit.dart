@@ -30,6 +30,10 @@ class SongPlayerCubit extends Cubit<SongPlayerState> {
     emit(SongPlayerPrevious());
   }
 
+  void seekSong(Duration position) {
+    audioPlayer.seek(position);
+  }
+
   String? currentSongTitle;
 
   Future<void> loadSong(String url, String title) async {

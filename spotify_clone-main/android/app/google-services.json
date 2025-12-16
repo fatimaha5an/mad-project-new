@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "654974191226",
+    "project_id": "spotifyclone-bacc2",
+    "storage_bucket": "spotifyclone-bacc2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654974191226:android:2eab68eb9a90f912d09dc3",
+        "android_client_info": {
+          "package_name": "com.example.spclone1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnn5MWfQOHMz1JBvqH7oBJDLr8my9K8aE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
